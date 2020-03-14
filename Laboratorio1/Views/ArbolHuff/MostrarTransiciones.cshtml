@@ -1,0 +1,37 @@
+﻿@model  string[,]
+
+<h2>FOLLOWS</h2>
+
+<head>
+
+    <style>
+        table {
+            display: table;
+            border-collapse: separate;
+            border-spacing: 20px;
+            border-color: black;
+            align-content: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+
+
+<table>
+  @for (int i = 0; i < @Model.GetLength(1); i++)
+  {
+        <tr>
+           @for (int j = 0; j < @Model.GetLength(0); j++)
+           { 
+                <td>
+                    @Model[ j,i] 
+                </td>            
+             }
+        </tr>
+   } 
+</table>
+
+
+<td>@Html.ActionLink("Regresar", "MostrarAsignaciones", "ReadText") </td>
+<td>@Html.ActionLink("Verificar AFD", "Transiciones", "ReadText") </td>

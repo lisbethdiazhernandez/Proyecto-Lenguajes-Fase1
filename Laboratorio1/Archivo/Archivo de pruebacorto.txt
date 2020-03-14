@@ -1,0 +1,25 @@
+SETS 
+	LETRA   = 'A'..'Z'
+	+			'_'  
+	DIGITO
+	= 
+	'0'
+	..
+	'9'  
+TOKENS
+	TOKEN 1= 
+	DIGITO  DIGITO
+	*
+	TOKEN 2='"' CHARSET '"' 
+	
+ACTIONS
+	RESERVADAS() 
+	{
+		18 = 'PROGRAM'
+		19 = 'INCLUDE'
+		20 = 'CONST'
+		21 = 'TYPE' 
+		22 = 'VAR' 
+	} 
+ 
+ERROR = 54 

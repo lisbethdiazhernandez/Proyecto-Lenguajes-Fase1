@@ -1,0 +1,54 @@
+﻿@model Dictionary<int, Laboratorio1.ArbolHuffman.GraphClass.vertice>
+
+<h2>FIRST Y LAST</h2>
+
+<head>
+
+    <style>
+        table {
+            display: table;
+            border-collapse: separate;
+            border-spacing: 20px;
+            border-color: black;
+            align-content: center;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+
+
+<table>
+    <tr>
+        <th style="text-align:center">Value      </th>
+        <td> </td>
+        <td> </td>
+        <th style="text-align:center">First         </th>
+        <td> </td>
+        <td> </td>
+        <th style="text-align:center">Last</th>
+    </tr>
+    @foreach (var item in @Model)
+    {
+        <tr style="text-align:center">
+            <td style="text-align:center">@item.Value.value</td>
+            <td> </td>
+            @foreach (var fi in item.Value.First)
+            {
+                <td style="text-align:center">
+                    @fi
+                </td>
+
+            }
+            <td> </td>
+            @foreach (var la in item.Value.Last)
+            {
+                <td style="text-align:center">@la </td>
+
+            }
+        </tr>
+
+    }
+</table>
+
+    <td>@Html.ActionLink("VERIFICAR FOLLOWS", "MostrarFollow" ,"ReadText") </td>
